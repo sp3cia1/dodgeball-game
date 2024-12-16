@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+<head>
+  <title>Dodgeball.in|Online dodgeball game</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <link rel="stylesheet" type="text/css" href="index.css">
+  <!-- <script src="https://sdk.crazygames.com/crazygames-sdk-v2.js"></script> -->
+</head>
+<body>
+
+  <body>
+    <img id="crazyGamesLogo" src="images/crazygames-icon.png" alt="Logo">
+    <!-- rest of your code -->
+  </body>
+  <div id="gameScreen">
+    <div id="helpScreen">
+      <div class="modal-content">
+        <h1>HELP</h1>
+        <ol>
+          <li>Press <img src="images/space-button-icon.png" alt="Space button"> (Space) to DASH or SHOOT. <span style="color: red;">(Movement is locked while you have the ball)</span></li>
+
+          <li>Keep an eye on Stamina <img class="player" src="images/player.png" alt="Player Image">. It decides if you <span style="color: green;">CAN</span> <img class="ball"  src="images/catchable.png" alt="catchable-ball"> or <span style="color: red;">CANNOT</span> <img class="ball" src="images/uncatchable.png" alt="uncatchable-ball"> catch the ball and SLOWS you down.</li>
+
+          <li>Movement DECREASES <img src="images/lowStamina.png" alt="lowStamina"> stamina. Stop to REGAIN <img src="images/highStamina.png" alt="highStamina"> it.</li>
+
+          <!-- <li>Note :- Please try to change screen sizes before Starting a new game</li> -->
+        </ol>
+        
+        <button id="closeHelpButton" >Got it!</button>
+      </div>
+    </div>
+
+    <div id="modalEl" class="modal">
+
+    <div id="responsive-banner-container-1"></div>
+    <div id="responsive-banner-container-2"></div>
+
+    <div class="modal-content">
+      <p class="title1">DODGEBALL</p>
+      <label for ="nickname">Nickname</label>
+      <input id="nicknameEl" class="nickname" type="text" placeholder="Nickname" />
+      <button id="start-button" class="play-button">Play</button>
+      <div id="players-div">
+        <p>Players</p>
+        <button id="button-4" onclick="selectButton(this.id)">4</button>
+        <button id="button-6" onclick="selectButton(this.id)">6</button>
+        <button id="button-8" onclick="selectButton(this.id)">8</button>
+      </div>
+    </div>
+  </div>
+ 
+  <div id="victoryScreen" class="modal">
+    <div class="modal-content">
+      <p>WOW You WON! Anything you wanna say?</p>
+      <input id="victoryMessage" type="text" placeholder="Type Your Message" />
+      <button id="playAgainButton" class="play-button">Play Again</button>
+      <div class="playerDiv">
+        <p>Players</p>
+        <button id="victory-button-4" onclick="selectButton(this.id)">4</button>
+        <button id="victory-button-6" onclick="selectButton(this.id)">6</button>
+        <button id="victory-button-8" onclick="selectButton(this.id)">8</button>
+      </div>
+
+    </div>
+  </div>
+  
+  <!-- <button id="fullScreenButton">
+    Toggle Fullscreen
+  </button> -->
+  
+  <div id="joyDiv"></div>
+
+  <canvas id="gameCanvas"></canvas>
+
+  </div>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>
+    let selectedButton = document.getElementById('button-4'); 
+    function selectButton(id) {
+      selectedButton.classList.remove('selected'); 
+      selectedButton = document.getElementById(id); 
+      selectedButton.classList.add('selected'); 
+    }
+
+    selectedButton.classList.add('selected');
+  </script>
+
+  <script src="joy.js"></script>
+
+  <script type="module" src="index.js"></script>
+
+</body>
+</html>
